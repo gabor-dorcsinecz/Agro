@@ -1,0 +1,1 @@
+Get-ChildItem -Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP" -Recurse | Get-ItemProperty -Name Version -ErrorAction SilentlyContinue | Where-Object { $_.Version -match '^\d+\.\d+' } | Select-Object PSChildName, Version
